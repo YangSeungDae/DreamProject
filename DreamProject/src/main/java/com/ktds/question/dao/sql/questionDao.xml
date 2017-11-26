@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="QuestionDao">
+  
+  	<resultMap type="QuestionVO" id="QuestionVOMap">
+  		<!-- pk 한테는  id라고 하는거임 -->
+		<id column="QUESTION_ID" property="questionId"/>
+		<result column="Q_MEMBER_ID" property="memberId"/>
+		<result column="SUBJECT" property="subject"/>
+		<result column="CONTENT" property="content"/>
+		<result column="WRITE_DATE" property="writeDate"/>
+		<result column="CATEGORY_ID" property="categoryId"/>
+		<result column="ATTACHMENT_ID" property="attachmentId"/>
+		<result column="CAR_NUMBER" property="carNumber"/>
+		<result column="VIN_NUMBER" property="vinNumber"/>
+		<result column="CONTRACT_NUMBER" property="contractNumber"/>
+		<result column="ANSWER_COUNT" property="answerCount"/>		
+		<!-- 알리아스? 아이디를 써야됨 -->
+		<!-- BoardVO 에 있는 거 -->
+		<association property="memberVO" javaType="MemberVO">
+			<id column="M_MEMBER_ID" property="memberId"/>
+			<result column="NAME" property="name"/>
+			<result column="MOBILE_NO" property="mobileNo"/>
+			<result column="ADDRESS" property="mobileNo"/>
+			<result column="SMS_SPAM_YN" property="smsSpamYn"/>
+			<result column="EMAIL_SPAM_YN" property="emailSpamYn"/>
+			<result column="MOBILE_SPAM_YN" property="memoReceiveFlag"/>
+			<result column="AUTH_LEV" property="authLev"/>
+			<result column="ADDRESS_SPAM_YN" property="addressSpamYn"/>
+		</association>
+		
+		<association property="categoryVO" javaType="CategoryVO">
+			<id column="CATEGORY_ID" property="categoryId"/>
+			<result column="CATEGORY_NAME" property="categoryName"/>
+			<result column="CATEGORY_PARENT_NAME" property="categoryParentName"/>
+		</association>
+		
+		<association property="attachmentVO" javaType="AttachmentVO">
+			<id column="ATTACHMENT_ID" property="attachmentId"/>
+			<result column="ATTACHMENT_NAME" property="attachmentName"/>
+		</association>
+  	</resultMap>
+  	<insert id="insertNewQuestion" parameterType="QuestionVO">
+  		INSERT INTO	QUESTION
+  		(
+  			QUESTION_ID
+			, MEMBER_ID
+			, SUBJECT
+			, CONTENT
+			, WRITE_DATE
+			, CATEGORY_ID
+			, ATTACHMENT_ID
+			, CAR_NUMBER
+			, VIN_NUMBER
+			, CONTRACT_NUMBER
+  		)
+  		VALUES
+  		(
+  			QUESTION_ID_SEQ.NEXTVAL
+  			, #{memberId}
+  			, #{subject}
+  			, #{content}
+  			, SYSDATE
+  			, #{categoryId}
+  			, #{attachmentId}
+  			, #{carNumber}
+  			, #{vinNumber}
+  			, #{contractNumber}
+  		)
+  	</insert>
+  	
+  	<select id="selectAllQuestionCount" parameterType="QuestionVO" resultType="_int">
+  		SELECT	COUNT(1)
+  		FROM	QUESTION Q
+  				, MEMBER M
+  				, CATEGORY C
+	  	WHERE	Q.CATEGORY_ID = C.CATEGORY_ID
+  		AND		(Q.MEMBER_ID = M.MEMBER_ID OR M.AUTH_LEV='5')
+  		<if test="memberId != null and memberId != ''">
+  			AND M.MEMBER_ID = #{memberId}
+  		</if>
+  	</select>
+  	
+  	<select id="selectAllQuestion" parameterType="QuestionVO" resultType="QuestionVO" resultMap="QuestionVOMap">
+  	
+  		<include refid="Paging.header" />
+  		SELECT	QUESTION_ID
+  				, CONTENT
+  				, Q.CATEGORY_ID
+  				, SUBJECT
+  				, WRITE_DATE
+  				, CASE WHEN (SELECT COUNT(1) FROM ANSWER WHERE QUESTION_ID=Q.QUESTION_ID) > 0 THEN 1
+  				       ELSE 0 END AS ANSWER_COUNT
+  				, C.CATEGORY_NAME
+  				, C.CATEGORY_PARENT_NAME
+  		FROM	QUESTION Q
+  				, MEMBER M
+  				, CATEGORY C
+	  	WHERE	Q.CATEGORY_ID = C.CATEGORY_ID
+	  	AND		(Q.MEMBER_ID = M.MEMBER_ID OR M.AUTH_LEV='5')
+	  	<if test="memberId != null and memberId != ''">
+  			AND M.MEMBER_ID = #{memberId}
+  		</if>
+	  	ORDER BY ANSWER_COUNT ASC, QUESTION_ID DESC
+	  	<include refid="Paging.footer" />
+  	</select>
+  	<select id="selectQuestionById" parameterType="QuestionVO" resultType="QuestionVO" resultMap="QuestionVOMap">
+  		SELECT	QUESTION_ID
+  				, CONTENT
+  				, Q.CATEGORY_ID
+  				, SUBJECT
+  				, WRITE_DATE
+  				, CASE WHEN (SELECT COUNT(1) FROM ANSWER WHERE QUESTION_ID=Q.QUESTION_ID) > 0 THEN 1
+  				       ELSE 0 END AS ANSWER_COUNT
+  				, C.CATEGORY_NAME
+  				, C.CATEGORY_PARENT_NAME
+  				, Q.CAR_NUMBER
+  				, Q.VIN_NUMBER
+  				, Q.CONTRACT_NUMBER
+  				, Q.ATTACHMENT_ID
+  				, (SELECT ATTACHMENT_NAME FROM ATTACHMENT WHERE ATTACHMENT_ID=Q.ATTACHMENT_ID) AS ATTACHMENT_NAME
+  		FROM	QUESTION Q
+  				, MEMBER M
+  				, CATEGORY C
+	  	WHERE	Q.CATEGORY_ID = C.CATEGORY_ID
+	  	AND		(Q.MEMBER_ID = M.MEMBER_ID OR M.AUTH_LEV='5')
+	  	<if test="memberId != null and memberId != ''">
+  			AND M.MEMBER_ID = #{memberId}
+  		</if>
+  		AND 	Q.QUESTION_ID = #{questionId}
+  	</select>
+  	
+  </mapper>

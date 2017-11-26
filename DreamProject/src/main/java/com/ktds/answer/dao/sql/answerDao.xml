@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AnswerDao">
+
+	<insert id="insertNewAnswer" parameterType="AnswerVO">
+		INSERT INTO ANSWER 	(
+								ANSWER_ID
+								, ANSWER_DATE
+								, ANSWER_CONTENT
+								, MEMBER_ID
+								, QUESTION_ID
+							)
+		VALUES				(
+								ANSWER_ID_SEQ.NEXTVAL
+								, SYSDATE
+								, #{answerContent}
+								, #{memberId}
+								, #{questionId}
+							)
+	</insert>
+	
+	<resultMap type="AnswerVO" id="AnswerVOMap">
+	
+		<id column="ANSWER_ID" property="answerId" />
+		<result column="ANSWER_DATE" property="answerDate" />
+		<result column="ANSWER_CONTENT" property="answerContent" />
+		<result column="MEMBER_ID" property="memberId" />
+		<result column="QUESTION_ID" property="questionId" />
+
+		
+		<association property="questionVO" javaType="QuestionVO">
+			<id column="QUESTION_ID" property="questionId"/>
+			<result column="MEMBER_ID" property="memberId"/>
+		</association>
+		
+	</resultMap>
+	
+	
+	<select id="selectAllAnswerByQuestionId" resultMap="AnswerVOMap"  parameterType="_int">
+		SELECT 	ANSWER_ID
+				, ANSWER_DATE
+				, ANSWER_CONTENT
+				, QUESTION_ID
+		FROM	ANSWER
+		WHERE	QUESTION_ID = #{questionId}
+	</select>
+	
+	
+	<update id="updateAnswer" parameterType="AnswerVO">
+		UPDATE 	ANSWER
+		SET		ANSWER_CONTENT = #{answerContent}
+		WHERE	ANSWER_ID = #{answerId}
+		AND		QUESTION_ID = #{questionId}
+	</update>
+	
+	<update id="deleteAnswer" parameterType="AnswerVO">
+		UPDATE 	ANSWER
+		SET		ANSWER_CONTENT = '삭제된 댓글입니다.(' || SYSDATE || ')'
+		WHERE	ANSWER_ID = #{answerId}
+		AND		QUESTION_ID = #{questionId}
+	</update>
+
+</mapper>

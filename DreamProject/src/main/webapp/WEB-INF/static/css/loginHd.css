@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+.sub-header-wrap {
+    position: relative;
+    width: 100%;
+    min-width: 930px;
+    padding-top: 30px;
+}
+
+.sub-header {
+	height: 120px;
+	margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: normal;
+}
+
+.sub-header-wrap h3{
+	font-size: 0;
+    line-height: 0;
+    text-align: center;
+}
+
+.sub-header-wrap .title-desc {
+    text-align: center;
+    margin-top: 0px;
+} 
+
+.title-desc {
+	font-size: 9pt;
+}
+
+.location{
+    width: 930px;
+    text-align: end;
+    font-size: 11px;
+    line-height: 1.2;
+    color: #747474
+}
+
+.location .span{
+	font-size: 0.1px;	
+}
+
+.location a{
+	text-decoration:none;
+	color: #747474
+}
+.location a:hover{
+	text-decoration:underline;
+}
+
+.subtitle-area-inner {
+    position: relative;
+    width: 930px;
+    margin: 0 auto;
+}
+.em{
+	color:#0080c0;
+	font-style: normal;
+}
+
+.subtitle-area {
+    height: 72px;
+    padding-top: 0;
+    border-bottom: 0;
+}
+
+.tip{
+	display: inline-block;
+}
+
+.start {
+    margin-top: 0px;
+}
+
+.bold {
+	font-weight: bold;
+	color: #000000;
+}
+
+.article{
+    position: relative;
+    width: 930px;
+    margin: 0 auto;
+	
+	padding-bottom: 50px;	
+}
+.input-wrap{
+	position: relative;
+    width: 100%;
+    height: 200px;
+	border: 1px solid #c0c0c0;
+	border-left: none;
+	border-right: none;
+	margin-top: 15px;
+}
+
+.input{
+	position: absolute;
+	top: 45px;
+    left: 235px;
+    width: 460px;
+    height: 140px;
+}
+
+.emailLine div{
+	display: inline-block;
+}
+.emilid{
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+input .txt{
+	padding: 5px 0 0 4px;
+    border: 1px solid #dedede;
+    border-radius: 0;
+    background: #fff;
+    color: #707070;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.password {
+	margin-top: 5px;	
+}
+.idsave {
+	font-size: 11px;
+	margin-left:87px;
+}
+
+.idsave a{
+	color:#000000;
+	text-decoration:none;
+}
+.idsave a:hover{
+	text-decoration:underline;
+}
+
+.join-function {
+	margin-top: 30px;
+	padding-left: 230px;
+}
+
+.join-function .space {
+  	vertical-align: 10px;
+  	margin-left: 5px;
+}
+.bar {
+	color: #e4e4e4;
+}
+
+.idsave {
+    color: #707070;
+    text-decoration: none;
+}
+
+.idsave a {
+    color: #707070;
+    text-decoration: none;
+}
+
+input .checkbox {
+	 margin: 0px;
+     margin-right: 2px;
+     vertical-align: -2px;
+}
+
+.kjyerror {
+	bottom: 10px;
+    left: 307px;
+    color: #3876bc;
+    font-size: 11px;
+	margin-top: 40px;
+    margin-left: 95px;
+}

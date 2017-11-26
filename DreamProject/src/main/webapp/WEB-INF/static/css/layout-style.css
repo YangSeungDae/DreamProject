@@ -1,0 +1,405 @@
+@charset "UTF-8";
+
+/*
+	SignUp 페이지에서 사용할 스타일
+
+*/
+#agreementContent {
+	border-radius: 7px;
+	padding: 10px;
+	border: 1px solid #cccccc;
+	background: #f8f8f8;
+	margin-bottom: 20px;
+}
+
+#agreementCheck {
+	border-top: 1px dashed #cccccc;
+	padding-top: 10px;
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+.box {
+	display: inline-block;
+}
+
+.box p {
+	margin: 0px;
+}
+
+.label {
+	width: 160px;
+	height: 20px;
+	padding-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 25px;
+	text-align: right;
+	vertical-align: top;
+}
+
+.require {
+	color: #ff0000;
+}
+
+/*어트리뷰트 셀렉터*/
+input[type=text], input[type=password], select {
+	width: 220px;
+	height: 20px;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-top: 3px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	border: 1px solid #dddddd;
+}
+
+select {
+	height: 30px;
+}
+
+.lineBreak {
+	height: 10px;
+}
+
+.cancel {
+	float: left;
+	/*죽었다 깨어나도 왼쪽으로 붙여라. 레이아웃이 쉽게 깨지므로 float 하단부에 div를 여분으로 준다.*/
+}
+
+.regist {
+	float: right;
+}
+
+.clear {
+	clear: both; /*float을 clear하기 위함*/
+}
+
+/*float때문에 레이아웃 깨지는 것 방지.*/
+.button:link {
+	/*링크가 있을경우엔, 이렇게 보여줘라*/
+	border-radius: 5px;
+	background: #eeeeee; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#ffffff, #eeeeee);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#ffffff, #eeeeee);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#ffffff, #eeeeee);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(#ffffff, #eeeeee);
+	/* Standard syntax (must be last) */
+	/*그라데이션 시작색   끝색*/
+	position: relative;
+	top: +6px;
+}
+
+.button:hover {
+	/*마우스 올렸을때*/
+	background: #eeeeee;
+}
+
+#registBtn {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
+	background-color: #333333;
+	color: #f8f8f8; /*글자색깔*/
+	border-radius: 5px; /*모서리 둥그렇게*/
+	border: 0px;
+	/* 	height: 27px;
+	margin-top: -6px; 위로 올려서 인풋 태그랑 맞추기 위해서..float를 하면 line-height를 쓸수 없음. */
+	line-height: 10px;
+}
+
+#
+.formButtons {
+	/* vertical-align: top; */
+	border-top: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#loginWrapper {
+	padding: 15px;
+}
+
+#loginText {
+	font-weight: bold;
+	float: left;
+	position: relative;
+	top: +6px;
+}
+
+#closeButton a {
+	border: none;
+	background: #ffffff;
+	float: right;
+	font-size: 11pt;
+}
+
+#closeButton a:link {
+	color: #dddddd;
+}
+
+#closeButton a:hover {
+	color: #555555;
+}
+
+.loginInput input[type=text], .loginInput input[type=password] {
+	border-radius: 0px;
+	border-top: 2px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-bottom: 0px;
+	background: #f8f8f8;
+	padding: 3px;
+	height: 15px;
+}
+
+.menu {
+	padding: 0px;
+	padding-top: 10px;
+	list-style: none;
+	border-top: 1px solid #dddddd;
+}
+
+.menu li {
+	margin-bottom: 5px;
+}
+
+.menu li:last-child {
+	margin-bottom: 0px;
+}
+
+.menu a {
+	display: block;
+}
+
+#loginForm {
+	position: absolute;
+	top: 30px;
+	border: 1px solid #dddddd;
+	z-index: 1; /*3차원 축...top이랑 left말고*/
+	display: inline-block; /* 나왔다가 안나왔다가 하려고 최종적으로 추가 */
+	background: #ffffff;
+	/*opacity: 0.8; 투명도*/
+}
+
+h3.title {
+	font-size: 12pt;
+	color: #555555;
+	border-left: 12px solid #333333;
+	padding-left: 7px;
+	margin-left: 10px;
+}
+
+table.grid {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.grid tr:hover {
+	background-color: #f8f8f8
+}
+
+table.grid th {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #f8f8f8;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+table.grid td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #dddddd;
+	text-align: center;
+}
+
+table.grid tr:last-child td {
+	border-bottom: 1px solid #cccccc;
+}
+
+table.grid td:nth-child(2) {
+	text-align: left;
+}
+
+table.grid a {
+	font-weight: normal;
+	border: 0px solid transparent;
+	padding: 0px;
+	color: #333333;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+.pad-border-radius {
+	margin-top: 10px;
+	padding: 15px;
+	border: 1px solid #dddddd;
+	border-radius: 7px;
+	background-color: #f8f8f8;
+}
+
+.pad-border-radius>div:nth-child(1) {
+	padding-right: 15px;
+}
+
+.pad-border-radius input[type=text] {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.pad-border-radius .btns {
+	border-top: 1px solid #dddddd;
+	padding-top:	10px;
+	padding-bottom:  10px;
+	text-align: center;
+	margin-top: 10px;
+	position: relative;
+}
+
+.pad-border-radius .btns > div {
+	position: absolute;
+	top: 10px;
+	right: 0px;
+}
+
+.pad-border-radius .btns .registBtn{
+	
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top:  10px;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	border-radius: 7px;
+	display: inline-block;
+	
+	background: #eeeeee; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#635ec0, #443fae); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#635ec0, #443fae); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#635ec0, #443fae); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#635ec0, #443fae); /* Standard syntax (must be last) */
+	
+	color: #ffffff;
+	font-weight: nomal;
+}
+
+.pad-border-radius .btns .cancelBtn{
+	
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top:  10px;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	border-radius: 7px;
+	display: inline-block;
+	
+	background: #eeeeee; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#ffffff, #f8f8f8); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #f8f8f8); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #f8f8f8); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ffffff, #f8f8f8); /* Standard syntax (must be last) */
+	
+	font-weight: nomal;
+}
+
+
+
+/* -------------------------------------------- */
+#boardlogin {
+	height: 45px;
+	background-color: #d9d9d9;
+	border-bottom: 1px solid black;
+}
+
+#boardsubject {
+	height: 45px;
+	background-color: #ffffff;
+	border-bottom: 1px solid black;
+}
+
+#boardname {
+	height: 45px;
+	background-color: #f5f5f5;
+}
+
+.margin-top {
+	margin-top: 13px;
+}
+
+.float {
+	float: right;
+}
+
+#boardOne {
+	margin: 20px;
+}
+
+.bold {
+	font-weight: bold
+}
+
+.gray {
+	color: gray;
+}
+
+.relative{
+	position: relative;
+}
+.margin-bottom {
+	margin-bottom: 40px;
+}
+
+.absolute1 {
+	position: absolute;
+	top: 3px;
+	left: 240px;
+}
+
+
+.absolute2 {
+	position: absolute;
+	top: 9px;
+	right: 10px;
+}
+
+.Searchmargin {
+	margin-top: 3px;
+}
+
+
+.box input[type=test], .box list, .box a {
+	
+}
+
+
+
+.reply-wrapper {
+    border-top: 1px solid #ddd; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.img, .reply {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.img {
+    width: 70px;
+}
+
+.reply .writer {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.reply .date {
+    color: #ccc;
+}
+

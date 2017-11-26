@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="MenuDao">
+  	<resultMap type="MenuVO" id="MenuVOMap">
+  		<id property="menuId" column="MENU_ID" />
+		<result property="menuName" column="MENU_NAME" />
+		<result property="menuTypeFlag" column="MENU_TYPE_FLAG" />
+		<result property="html" column="HTML" javaType="java.lang.String" jdbcType="CLOB" typeHandler="org.apache.ibatis.type.ClobTypeHandler" />
+  	</resultMap>
+  	<select id="selectMenuById" parameterType="_int" resultMap="MenuVOMap">
+  		SELECT
+  			MENU_ID
+			, MENU_NAME 
+			, MENU_TYPE_FLAG      
+			, HTML
+		FROM MENU
+		WHERE MENU_ID=#{menuId}
+  	</select>
+  	<insert id="insertNewMenu" parameterType="MenuVO">
+  		INSERT INTO MENU
+  		(
+  			MENU_ID
+  			, MENU_NAME
+  			, MENU_TYPE_FLAG
+  			, HTML
+  		)
+  		VALUES
+  		(
+  			MENU_ID_SEQ.NEXTVAL
+  			, #{menuName}
+  			, #{menuTypeFlag}
+  			, #{html}
+  		)
+  	</insert>
+  	<update id="updateMenuById" parameterType="MenuVO">
+  		UPDATE MENU
+  		SET	MENU_NAME=#{menuName}
+  			, MENU_TYPE_FLAG=#{menuTypeFlag}
+  			, HTML=#{html}
+  		WHERE MENU_ID=#{menuId}
+  	</update>
+  </mapper>

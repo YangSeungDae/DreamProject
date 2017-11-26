@@ -1,0 +1,38 @@
+@charset "UTF-8";
+body {
+	font-family: "나눔고딕";
+	font-size: 9pt;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+#wrapper {
+	padding: 10px;
+    height: 200px;
+    background: #eeeeee; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#eeeeee, #ffffff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#eeeeee, #ffffff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#eeeeee, #ffffff); /* Standard syntax (must be last) */
+}
+
+a {
+	font-weight: bold;
+	border: 1px solid #cccccc;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom:5px;
+	color: #333333;
+	background-color: #f8f8f8;
+	text-decoration: none;
+}
+
+h1 {
+	border-bottom: 1px solid #cccccc;
+}
+
+
+
+/* 주석 */

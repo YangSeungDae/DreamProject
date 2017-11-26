@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+.content .cke_editable {
+	cursor: text
+}
+
+.content .cke_editable img,
+.content .cke_editable input, 
+.content .cke_editable textarea {
+	cursor: default
+}
+
+.content img.cke_flash {
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/flash/images/placeholder.png?t=H8DA);
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 1px solid #a9a9a9;
+	width: 80px;
+	height: 80px;
+}
+
+.content .cke_editable form {
+	border: 1px dotted #FF0000;
+	padding: 2px;
+}
+
+.content img.cke_hidden {
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/forms/images/hiddenfield.gif?t=H8DA);
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 1px solid #a9a9a9;
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.content img.cke_iframe {
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/iframe/images/placeholder.png?t=H8DA);
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 1px solid #a9a9a9;
+	width: 80px;
+	height: 80px;
+}
+
+.content .cke_contents_ltr a.cke_anchor, 
+.content .cke_contents_ltr a.cke_anchor_empty,
+.content .cke_editable.cke_contents_ltr a[name], 
+.content .cke_editable.cke_contents_ltr a[data-cke-saved-name]
+	{
+	background:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/link/images/anchor.png?t=H8DA)
+		no-repeat left center;
+	border: 1px dotted #00f;
+	background-size: 16px;
+	padding-left: 18px;
+	cursor: auto;
+}
+
+.content .cke_contents_ltr img.cke_anchor {
+	background:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/link/images/anchor.png?t=H8DA)
+		no-repeat left center;
+	border: 1px dotted #00f;
+	background-size: 16px;
+	width: 16px;
+	min-height: 15px;
+	height: 1.15em;
+	vertical-align: text-bottom;
+}
+
+.content .cke_contents_rtl a.cke_anchor, 
+.content .cke_contents_rtl a.cke_anchor_empty,
+.content .cke_editable.cke_contents_rtl a[name], 
+.content .cke_editable.cke_contents_rtl a[data-cke-saved-name]
+	{
+	background:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/link/images/anchor.png?t=H8DA)
+		no-repeat right center;
+	border: 1px dotted #00f;
+	background-size: 16px;
+	padding-right: 18px;
+	cursor: auto;
+}
+
+.content .cke_contents_rtl img.cke_anchor {
+	background:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/link/images/anchor.png?t=H8DA)
+		no-repeat right center;
+	border: 1px dotted #00f;
+	background-size: 16px;
+	width: 16px;
+	min-height: 15px;
+	height: 1.15em;
+	vertical-align: text-bottom;
+}
+
+.content div.cke_pagebreak {
+	background:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/pagebreak/images/pagebreak.gif?t=H8DA)
+		no-repeat center center !important;
+	clear: both !important;
+	width: 100% !important;
+	border-top: #999 1px dotted !important;
+	border-bottom: #999 1px dotted !important;
+	padding: 0 !important;
+	height: 7px !important;
+	cursor: default !important;
+}
+
+.content .cke_show_blocks h6:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks h5:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks h4:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks h3:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks h2:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks h1:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks blockquote:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks address:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks pre:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks div:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	), .content .cke_show_blocks p:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-repeat: no-repeat;
+	border: 1px dotted gray;
+	padding-top: 8px
+}
+
+.content .cke_show_blocks h6:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_h6.png?t=H8DA)
+}
+
+.content .cke_show_blocks h5:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_h5.png?t=H8DA)
+}
+
+.content .cke_show_blocks h4:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_h4.png?t=H8DA)
+}
+
+.content .cke_show_blocks h3:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_h3.png?t=H8DA)
+}
+
+.content .cke_show_blocks h2:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_h2.png?t=H8DA)
+}
+
+.content .cke_show_blocks h1:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_h1.png?t=H8DA)
+}
+
+.content .cke_show_blocks blockquote:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_blockquote.png?t=H8DA)
+}
+
+.content .cke_show_blocks address:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_address.png?t=H8DA)
+}
+
+.content .cke_show_blocks pre:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_pre.png?t=H8DA)
+}
+
+.content .cke_show_blocks div:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_div.png?t=H8DA)
+}
+
+.content .cke_show_blocks p:not ([contenteditable=false] ):not (.cke_show_blocks_off
+	){
+	background-image:
+		url(http://localhost:8080/Board/js/ckeditor/plugins/showblocks/images/block_p.png?t=H8DA)
+}
+
+.content .cke_show_blocks.cke_contents_ltr h6:not ([contenteditable=false] ):not
+	(.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_ltr h5:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_ltr h4:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ),
+	.content .cke_show_blocks.cke_contents_ltr h3:not ([contenteditable=false] ):not
+	(.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_ltr h2:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_ltr h1:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ),
+	.content .cke_show_blocks.cke_contents_ltr blockquote:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_ltr address:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ),
+	.content .cke_show_blocks.cke_contents_ltr pre:not ([contenteditable=false] ):not
+	(.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_ltr div:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_ltr p:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ){
+	background-position: top left;
+	padding-left: 8px
+}
+
+.content .cke_show_blocks.cke_contents_rtl h6:not ([contenteditable=false] ):not
+	(.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_rtl h5:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_rtl h4:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ),
+	.content .cke_show_blocks.cke_contents_rtl h3:not ([contenteditable=false] ):not
+	(.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_rtl h2:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_rtl h1:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ),
+	.content .cke_show_blocks.cke_contents_rtl blockquote:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_rtl address:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ),
+	.content .cke_show_blocks.cke_contents_rtl pre:not ([contenteditable=false] ):not
+	(.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_rtl div:not ([contenteditable=false]
+	):not (.cke_show_blocks_off ), .content .cke_show_blocks.cke_contents_rtl p:not
+	([contenteditable=false] ):not (.cke_show_blocks_off ){
+	background-position: top right;
+	padding-right: 8px
+}
+
+.content .cke_show_borders  table.cke_show_border, .content .cke_show_borders  table.cke_show_border>tr>td,
+	.content .cke_show_borders  table.cke_show_border>tr>th, .content .cke_show_borders  table.cke_show_border>tbody>tr>td,
+	.content .cke_show_borders  table.cke_show_border>tbody>tr>th, .content .cke_show_borders  table.cke_show_border>thead>tr>td,
+	.content .cke_show_borders  table.cke_show_border>thead>tr>th, .content .cke_show_borders  table.cke_show_border>tfoot>tr>td,
+	.content .cke_show_borders  table.cke_show_border>tfoot>tr>th {
+	border: #d3d3d3 1px dotted
+}

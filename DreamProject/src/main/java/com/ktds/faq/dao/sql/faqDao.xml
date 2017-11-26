@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="FaqDao">
+  	<select id="selectAllFaqCount" resultType="_int">
+  		SELECT
+			COUNT(1)
+		FROM FAQ
+		WHERE 1=1
+		<if test="questionContent != null and questionContent != ''" >
+			AND QUESTION_CONTENT LIKE '%' || #{questionContent} || '%'
+		</if>
+		<if test="faqCategoryName != null and faqCategoryName != ''">
+			AND FAQ_CATEGORY_NAME = #{faqCategoryName}
+		</if>
+		<if test="faqId != null and faqId != 0 and faqId != ''">
+			AND FAQ_ID = #{faqId}
+		</if>
+  	</select>
+  	
+  	<select id="selectAllFaq" resultType="FaqVO">
+  		<include refid="Paging.header" />
+  		SELECT
+  			FAQ_ID faqId
+			, QUESTION_CONTENT questionContent
+			, ANSWER_CONTENT answerContent
+			, FAQ_CATEGORY_NAME faqCategoryName
+			, FREQUENCY_LEV frequencyLev
+		FROM FAQ
+		WHERE 1=1
+		<if test="questionContent != null and questionContent != ''" >
+			AND QUESTION_CONTENT LIKE '%' || #{questionContent} || '%'
+		</if>
+		<if test="faqCategoryName != null and faqCategoryName != ''">
+			AND FAQ_CATEGORY_NAME = #{faqCategoryName}
+		</if>
+		<if test="faqId != null and faqId != 0 and faqId != ''">
+			AND FAQ_ID = #{faqId}
+		</if>
+		ORDER BY FAQ_ID DESC
+		<include refid="Paging.footer" />
+  	</select>
+  	
+  	<select id="selectFrequentFaq" resultType="FaqVO">
+  		SELECT * FROM (
+	  		SELECT
+	  			FAQ_ID faqId
+				, QUESTION_CONTENT questionContent
+				, ANSWER_CONTENT answerContent
+				, FAQ_CATEGORY_NAME faqCategoryName
+				, FREQUENCY_LEV frequencyLev
+			FROM FAQ
+			ORDER BY FREQUENCY_LEV DESC
+		)
+		WHERE ROWNUM <![CDATA[<=]]> 4
+  	</select>
+  	
+  	<delete id="deleteFaq" parameterType="_int" >
+		DELETE
+		FROM	FAQ
+		WHERE	FAQ_ID = #{faqId}
+	</delete>
+	
+	
+	<insert id="insertNewFaq" parameterType="faqVO">
+		INSERT INTO FAQ (	
+							FAQ_ID
+							, QUESTION_CONTENT
+							, ANSWER_CONTENT
+							, FAQ_CATEGORY_NAME
+							, FREQUENCY_LEV
+						  )
+		VALUES			  (
+							FAQ_ID_SEQ.NEXTVAL
+							, #{questionContent}
+							, #{answerContent}
+							, #{faqCategoryName}
+							, 0
+						  )
+	</insert>
+	
+	<update id="updateFaq" parameterType="faqVO">
+		UPDATE 	FAQ
+		SET		QUESTION_CONTENT = #{questionContent}
+				, ANSWER_CONTENT = #{answerContent}
+				, FAQ_CATEGORY_NAME = #{faqCategoryName}
+		WHERE	FAQ_ID = #{faqId} 
+	</update>
+	
+	
+  </mapper>

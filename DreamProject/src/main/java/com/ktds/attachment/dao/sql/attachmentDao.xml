@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AttachmentDao">
+
+	<select id="selectNextAttachmentId" resultType="_int">
+		SELECT	ATTACHMENT_ID_SEQ.NEXTVAL
+		FROM	DUAL
+	</select>
+	
+	<insert id="insertFile" parameterType="AttachmentVO">
+		INSERT INTO ATTACHMENT 	(
+									ATTACHMENT_ID
+									, ATTACHMENT_NAME
+								)
+		VALUES					(
+									#{attachmentId}
+									, #{attachmentName}
+								)
+		
+	</insert>
+	
+	<select id="selectAttachmentById" parameterType="_int" resultType="AttachmentVO">
+		SELECT 	ATTACHMENT_ID attachmentId
+				,ATTACHMENT_NAME attachmentName
+		FROM	ATTACHMENT
+		WHERE	ATTACHMENT_ID = #{attachmentId}
+	</select>
+</mapper>

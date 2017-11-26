@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="memberController" class="com.ktds.member.web.MemberController">
+		<property name="memberService" ref="memberServiceImpl"/>
+		<property name="mailSender" ref="mailSender"></property>
+	</bean>
+	
+	
+	<bean id="boardController" class="com.ktds.board.web.BoardController">
+		<property name="boardService" ref="boardServiceImpl"/>
+	</bean>
+	
+	<bean id="replyController" class="com.ktds.reply.web.ReplyController">
+		<property name="replyService" ref="replyServiceImpl"/>
+	</bean>
+	
+	<bean id="attachmentController" class="com.ktds.attachment.web.AttachmentController">
+		<property name="attachmentService" ref="attachmentServiceImpl"/>
+	</bean>
+	
+	<bean id="faqController" class="com.ktds.faq.web.FaqController">
+		<property name="faqService" ref="faqServiceImpl"/>
+	</bean>
+	
+	<bean id="questionController" class="com.ktds.question.web.QuestionController">
+		<property name="questionService" ref="questionServiceImpl"/>
+		<property name="categoryService" ref="categoryServiceImpl"/>
+		<property name="attachmentService" ref="attachmentServiceImpl"/>
+	</bean>
+	
+	<bean id="answerController" class="com.ktds.answer.web.AnswerController">
+		<property name="answerService" ref="answerServiceImpl"></property>
+	</bean>
+	 
+	<bean id="carController" class="com.ktds.car.web.CarController">
+		<property name="carService" ref="carServiceImpl"></property>
+	</bean>
+	
+	<bean id="menuController" class="com.ktds.menu.web.MenuController">
+		<property name="menuService" ref="menuServiceImpl"></property>
+	</bean>
+</beans>

@@ -1,0 +1,139 @@
+@charset "UTF-8";
+.service-navigation-area{
+	position: relative;
+	width: 100%;
+	height: 46px;
+}
+.service-navigation-area-inner{
+	position: relative;
+    width: 930px;
+	height: 46px;
+    margin: 0 auto;
+}
+.service-navigation-area-inner img {
+	float:left;
+	
+}
+.mainnavbtn {
+	height:46px;
+	width:186px;
+	position:relative;
+	float:left;
+}
+.mainNavBtnSpan {
+	display: none;
+	position: absolute; 
+	bottom: 0px; 
+	left: 0px; 
+	width: 186px; 
+	height: 4px; 
+	background-color: #6799FF;
+}
+.personally-box{
+	position: relative;
+	width: 100;
+	height: 227px;
+	background-color: #012c5f;
+}
+.personally-box-inner {
+	position: relative;
+	background-color: #012c5f;
+    width: 930px;
+	height: 227px;
+    margin: 0 auto;	
+}
+.personally-box-inner .goLoginDiv {
+	position: absolute; 
+	top:73px;
+	left:61px;	
+	width: 818px;
+	height: 40px;
+}
+.personally-box-inner .goCona {
+	position: absolute; 
+	top:120px;
+	left:55px;	
+	width: 489px;
+	height: 82px;	
+}
+.personally-box-inner .goSelectPurCndMgmtList {
+	position: absolute; 
+	top:130px;
+	left:600px;	
+	width: 260px;
+	height: 20px;	
+}
+.personally-box-inner .goHybrid {
+	position: absolute; 
+	top:155px;
+	left:600px;	
+	width: 210px;
+	height: 20px;	
+}
+.personally-box-inner .goService {
+	position: absolute; 
+	top:180px;
+	left:600px;	
+	width: 295px;
+	height: 20px;	
+}
+.personally-box-inner .PerName{
+	position: absolute; 
+	top:47px;
+	left:160px;	
+	width: 62px;
+	height: 30px;
+	font-size: 16px;
+    font-weight: bold;
+    color: #75a3cc;
+	
+}
+.personally-box-inner .goNews{
+	position: absolute; 
+	top:120px;
+	left:10px;	
+	width: 400px;
+	height: 55px;
+}
+.personally-box-inner .goNewsTwo{
+	position: absolute; 
+	top:40px;
+	left:455px;	
+	width: 174px;
+	height: 72px;
+	
+}
+.personally-box-inner .goRSS{
+	position: absolute; 
+	top:120px;
+	left:455px;	
+	width: 360px;
+	height: 30px;
+	
+}
+.personally-box-inner .goPlusFriend{
+	position: absolute; 
+	top:150px;
+	left:455px;	
+	width: 360px;
+	height: 30px;
+}
+.snai-session {
+	position: absolute; 
+	bottom: 0px; 
+	left: 0px; 
+	width: 186px;
+}
+.snai-seImg{
+	padding-left: 87px;
+}
+.personally-box-inner .per-btn-close {
+	position: absolute; 
+	top:0;
+	right:0;
+	z-index: 999;
+}
+.personally-box-inner .per-btn-close img {
+	border: 1px solid #dddddd;
+	
+}

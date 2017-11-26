@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.board{
+	margin-top: 50px;
+	width: 930px;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+select {
+	width: 145px;
+	border-radius: 0px;
+    border-color: rgb(169, 169, 169);
+}
+
+.tip {
+    margin-left: 5px;
+    color: #747474;
+    font-size: 11px;
+}
+
+th{
+	width: 139px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+td{
+	width: 791px;
+}
+
+textarea{
+	width: 745px;
+    height: 190px;
+}
+
+.btnwrap{
+	position: relative;
+	text-align: center;
+	margin-top: 20px;
+}
+#title{
+	width: 745px;
+}
+
+#file{
+	 width: 400px;
+}
+.board {
+	width:930px;
+	margin: 0px auto;
+}

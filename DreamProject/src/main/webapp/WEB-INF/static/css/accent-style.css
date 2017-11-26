@@ -1,0 +1,348 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: normal;
+ 
+}
+.prev-btn{
+	position: absolute;
+	right: 50%;
+    bottom: 170px;
+    left: 0;
+}
+
+.next-btn{
+	position: absolute;
+    bottom: 170px;
+    right: 0;
+}
+button{
+	border: 0px;
+	margin-top:15px;
+}
+
+ .next_btn{
+	position: absolute;
+    bottom: 170px;
+    right: 0;
+}
+
+ .prev_btn{
+	position: absolute;
+    right: 50%;
+    bottom: 170px;
+    left: 0;
+
+}
+
+.smallaccent{
+	position:relative;
+	font-size: 12px;
+	text-align:center; 
+    vertical-align:middle;
+}
+
+.smalling {
+	position:absolute;
+	text-align:center; 
+    vertical-align:middle;
+
+}
+
+.leftimg {
+	float: left;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.snstool {
+	display: inline-block;
+}
+
+.snstool2 {
+	display: inline-block;
+}
+
+.accent_detail{
+	text-align:center; 
+    vertical-align:middle;
+}
+
+.pricewrapper{
+	position: relative;
+	/*height: 30px;*/
+	border: 1px solid #e4e4e4;
+	background: #f0f1f3;	
+	padding:10px;
+}
+
+.accent {
+	position:absolute;
+	top: 4px;
+	left:4px;
+	padding:25px;
+}
+.smallaccent{
+	text-align:center; 
+    vertical-align:middle;
+    padding: 5px;+
+}
+
+.Btn{
+	margin-top: 30px;
+	text-align: right;
+}
+
+a{
+	color: #707070;
+	text-decoration: none;
+	
+}
+
+
+img{
+	border: 0;
+	vertical-align: top;
+}
+
+.content {
+	display: inline-block;
+	font-size: 10pt;
+	margin-top: 4px;
+}
+
+.carlist li{
+	display: inline-block;
+	border: 1px solid #e0e0e0;
+	margin-bottom: 0;
+}
+
+.accentDiv{
+	margin-bottom: 88px;
+}
+
+.line{
+	bottom: 0;
+}
+
+.list-wrapper{
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid #e4e4e4;
+	background: #f5f6f8;
+	font-family: '돋움',dotum,sans-serif;
+	color: #707070;
+}
+
+.section{
+	font-size: 11pt;
+	margin-top: 5px;
+	padding:10px;
+
+}
+
+.section1{
+	display: inline-block;
+	position: relative;
+    padding: 0;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: #000;
+}
+.detail{
+	border: 1px solid #e4e4e4;
+	border-collapse: collapse;
+	padding:20px;
+	width: 880px;
+}
+.detail-wrapper th{
+    border: 1px solid #626875;
+    background: #707683;
+    color: #ffffff;
+    padding: 10px;
+    
+}
+.information{
+	font-family: '돋움',dotum,sans-serif;
+	color: #707070;
+	font-size: 9pt;
+	padding:25px;
+}
+.information li{
+	padding:3px;
+}
+.purchase-guide .odd{
+    position: relative;
+    float: left;
+    width: 168px;
+    min-height: 335px;
+    padding: 25px 20px 0 20px;
+    border-left: 1px solid #e4e4e4;
+   
+}
+.purchase-guide{
+	 border: 1px solid #e4e4e4;
+	 display: inline-block;
+}
+h4{
+	border-bottom: 1px solid #dedede
+}
+
+h2{
+	padding:5px;
+	
+}
+.accent_main{
+	position: relative;
+}
+.quick_menu{
+	position: absolute;
+	right: 50%;
+    margin: -6px -510px 0px 0;
+    
+   
+
+}
+
+.close{
+	background-image: url("/WEB-INF/static/img/hd/up.PNG");
+}
+
+.menu{
+    display: block;
+}
+
+.quick_menu a{
+    display: block;
+}
+.accent_main{
+	padding:30px;
+}
+.detail-wrapper{
+	text-align:center; 
+    vertical-align:middle;
+   	padding:20px;
+
+}
+
+.icon{
+	margin-top: 180px;
+}
+
+.icon1{
+	padding-top: 140px;
+
+}
+.link-title{
+	 color: #666;
+    text-decoration: none;
+	font-size:10pt;
+    margin-top: 10px;
+}
+
+.accent_submain{
+	width: 880px;
+	margin: 0 auto;
+}
+
+#detail_1_Btn{
+	float: right;
+	display:inline-block;
+}
+#detail_2_Btn{
+	float: right;
+}
+#detail_3_Btn{
+	float: right;
+}
+#detail_4_Btn{
+	float: right;
+}
+#detail_5_Btn{
+	float: right;
+}
+#detail_6_Btn{
+	float: right;
+}
+#detail_7_Btn{
+	float: right;
+}
+#detail_8_Btn{
+	float: right;
+}
+.section{
+	font-size: 9pt;
+	font-family: '돋움',dotum,sans-serif;
+}
+
+.odd{
+	font-size: 9pt;
+	font-family: '돋움',dotum,sans-serif;
+	text-align: center;
+}
+
+.detail .left{
+	padding:15px;
+}
+
+.detail .last{
+	padding:15px;
+}
+
+.list-type01{
+	margin-top: 5px;
+}
+
+.last_accent {
+	padding-bottom: 120px;
+}
+.rolling_accent1{
+	width: 880px;
+	height:380px;
+	overflow: hidden;
+	position:relative;
+}
+.rolling_accent2{
+	width: 880px;
+	height:380px;
+	overflow: hidden;
+	position:relative;
+}
+.rolling_accent3{
+	width: 880px;
+	height:380px;
+	overflow: hidden;
+	position:relative;
+}
+.rolling_accent4{
+	width: 880px;
+	height:380px;
+	overflow: hidden;
+	position:relative;
+}
+.slide{
+	position: relative;
+}
+.rolling_accent1 li{
+	width: 880px;
+	float:left;
+}
+.rolling_accent2 li{
+	width: 880px;
+	float:left;
+}
+.rolling_accent3 li{
+	width: 880px;
+	float:left;
+}
+.rolling_accent4 li{
+	width: 880px;
+	float:left;
+}
+.smalling{
+	width: 880px;
+}

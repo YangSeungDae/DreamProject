@@ -1,0 +1,196 @@
+@charset "UTF-8";
+#footer-navigation {
+    position: relative;
+    width: 100%;
+    height: 137px;
+    border-top: 1px solid #e1e1e1;
+    background: #f1f3f6;
+}
+
+.footer-navigation-inner {
+    position: relative;
+    background: #f1f3f6;
+    width: 930px;
+    height: 66px;
+    margin: 0 auto;
+    padding: 35px 0; 
+}
+.carSelect {
+    display: inline;	
+}
+.carSelect > .select-layer-wrap {
+    display: inline;
+}
+.navi-left {
+	position: absolute;
+	left: 0px;
+	width: 430px;
+}
+.navi-right {
+	position: absolute;
+	top: 35px;
+	right: 0;
+	padding-left: 30px;
+	border-left: 1px solid #e1e1e1;
+}
+.foot-nav  {
+    width: 930px;
+    margin: 0 auto;
+    	
+}
+.footer-navigation  ul {
+	left: -30px;
+}
+
+
+.navi-left ul {
+	list-style: none;
+	left: -30px;
+	
+}
+.navi-right ul {
+	list-style: none;
+	left: -30px;
+
+}
+.navi-left li {
+	margin-bottom: 2px;
+}
+
+.navi-left li:first-child{
+	margin-bottom: 2px;
+    display: inline;
+}
+.navi-right li {
+	margin-bottom: 2px;	
+	
+}
+
+.navi-left ul li img{
+	margin-left: 2px;
+	margin-right: 7px;
+}
+.navi-right ul li img{
+	margin-left: 2px;
+	margin-right: 7px;
+}
+
+#footer-menu {
+    position: relative;
+    width: 100%;
+    background: #34373c;
+}
+
+.footer-menu-inner {
+    position: relative;
+    background: #34373c;
+    width: 930px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-right: 0px;
+    padding-bottom: 120px;
+    padding-left: 0px;
+    left:-5px;
+    
+
+}
+.footer-menu-inner  > img {
+	padding: 0px;
+}
+
+.footer-menu-inner .menu-list {
+    width: 100%;
+    font-size: 1%;
+    line-height: 0;
+    margin-bottom: 1px;
+}
+
+.footer-menu-inner .menu-list.ma {
+    margin-top:8px;
+}
+
+.footer-menu-inner .menu-list img {
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: 1px solid #8C8C8C;
+ 
+}
+
+.footer-menu-inner .menu-list .first {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+.footer-menu-inner .copyright {
+    padding-left: 20px;
+}
+
+.footer-menu-inner .gooddesign {
+    position: absolute;
+    top: 70px;
+
+    background: none;
+}
+
+.footer-menu-inner .gooddesign ul {
+    display: inline;
+    margin:0;
+    padding:0;
+}
+
+.footer-menu-inner .gooddesign ul li {
+    padding-right: 20px;
+    display: inline;
+}
+
+.footer-menu-inner .gooddesign ul li.last {
+    padding-right: 0px;
+}
+
+.footer-menu-inner .submark {
+    position: absolute;
+    top: 112px;
+   
+}
+
+.footer-menu-inner .submark ul li {
+    padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+}
+.footer-menu-inner .submark ul li:first-child {
+    padding-left: 0px;
+}
+
+.footer-menu-inner .familySite {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.footer-menu-inner select {
+    background-color: #34373c;
+    color: #8C8C8C;
+}
+
+.carSelect select {
+	font-size: 12px;
+}
+.navi-title {
+	display: inline;
+}
+.navi-title .evt {
+	display: inline;
+	margin-right: 25px;
+}
+.navi-title .inf {
+	display: inline;
+	margin-right: 13px;
+}
+.navi-title .bms {
+	display: inline;
+	margin-right: 3px;
+}

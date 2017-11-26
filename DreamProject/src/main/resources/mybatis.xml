@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.ktds.board.vo.BoardSearchVO" alias="BoardSearchVO" />
+		<typeAlias type="com.ktds.member.vo.MemberVO" alias="MemberVO" />
+		<typeAlias type="com.ktds.board.vo.BoardVO" alias="BoardVO"/>
+		<typeAlias type="com.ktds.reply.vo.ReplyVO" alias ="ReplyVO"/>
+		<typeAlias type="com.ktds.attachment.vo.AttachmentVO" alias = "AttachmentVO"/>
+		<typeAlias type="com.ktds.faq.vo.FaqVO" alias = "FaqVO"/>
+		<typeAlias type="com.ktds.question.vo.QuestionVO" alias = "QuestionVO"/>
+		<typeAlias type="com.ktds.category.vo.CategoryVO" alias = "CategoryVO"/>
+		<typeAlias type="com.ktds.car.vo.CarVO" alias = "CarVO"/>	
+		<typeAlias type="com.ktds.answer.vo.AnswerVO" alias="AnswerVO"/>
+		<typeAlias type="com.ktds.menu.vo.MenuVO" alias="MenuVO"/>
+	</typeAliases>
+	
+	<mappers>
+		<!-- sql 문 까지 연결 시켜야됨 .대신에 /로 연결한다 -->
+		<mapper resource="paging.xml"/>
+		<mapper resource="com/ktds/member/dao/sql/memberDao.xml" />
+		<mapper resource="com/ktds/board/dao/sql/boardDao.xml" />
+		<mapper resource="com/ktds/reply/dao/sql/replyDao.xml"/>
+		<mapper resource="com/ktds/attachment/dao/sql/attachmentDao.xml"/>
+		<mapper resource="com/ktds/faq/dao/sql/faqDao.xml" />
+		<mapper resource="com/ktds/question/dao/sql/questionDao.xml" />
+		<mapper resource="com/ktds/category/dao/sql/categoryDao.xml" />
+		<mapper resource="com/ktds/car/dao/sql/carDao.xml" />
+		<mapper resource="com/ktds/answer/dao/sql/answerDao.xml"/>
+		<mapper resource="com/ktds/menu/dao/sql/menuDao.xml"/>
+	</mappers>
+
+</configuration>

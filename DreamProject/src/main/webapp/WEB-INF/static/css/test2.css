@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.rainbow {
+	border: 1px solid black;
+	width: 300px;
+	height: 425px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.red {
+	background-color: red;
+	border: 1px solid black;
+	height: 50px;
+	margin-bottom: 10px;
+}
+.orange {
+	background-color: orange;
+	border: 1px solid black;
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.yellow {
+	background-color: yellow;
+	border: 1px solid black;
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.green {
+	background-color: green;
+	border: 1px solid black;
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.blue {
+	background-color: blue;
+	border: 1px solid black;
+	height: 50px;.
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.navy {
+	background-color: navy;
+	border: 1px solid black;
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.purpel{
+	background-color: purple;
+	border: 1px solid black;
+	height: 50px;
+	margin-top: 10px;
+}

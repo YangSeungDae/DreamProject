@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardDao">
+
+	<resultMap type="BoardVO" id="BoardVOMap">
+		<!-- pk 한테는  id라고 하는거임 -->
+		<id column="BOARD_ID" property="boardId"/>
+		<result column="SUBJECT" property="subject"/>
+		<result column="WRITE_DATE" property="writeDate"/>
+		<result column="VIEW_COUNT" property="viewCount"/>
+		<result column="LIKE_COUNT" property="likeCount"/>
+		<result column="DISLIKE_COUNT" property="dislikeCount"/>
+		<result column="CONTENT" property="content"/>
+		<result column="B_ID" property="id"/>
+		<!-- 알리아스? 아이디를 써야됨 -->
+		<!-- BoardVO 에 있는 거 -->
+		<association property="memberVO" javaType="MemberVO">
+			<id column="M_ID" property="id"/>
+			<result column="EMAIL" property="email"/>
+			<result column="NAME" property="name"/>
+			<result column="NICK_NAME" property="nickName"/>
+			<result column="PROFILE_PHOTO" property="profilePhoto"/>
+			<result column="MEMO_RECEIVE_FLAG" property="memoReceiveFlag"/>
+		</association>
+	</resultMap>
+	
+	<select id="selectAllBoardCount" resultType="_int" parameterType="BoardSearchVO">
+		SELECT	COUNT(1)
+		FROM	BOARD B
+				, MEMBER M
+		WHERE	B.ID = M.ID
+		<if test="searchKeyword != null and searchKeyword != '' ">
+			<if test="searchType == 1">
+			AND		B.SUBJECT LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 2">
+			AND		B.CONTENT LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 3">
+			AND		(B.CONTENT LIKE '%' || #{searchKeyword} || '%'
+			OR		B.CONTENT LIKE '%' || #{searchKeyword} || '%')
+			</if>
+			<if test="searchType == 4">
+			</if>
+			<if test="searchType == 5">
+			AND		M.NAME LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 6">
+			AND		M.NICK_NAME LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 7">
+			AND		M.ID LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 8">
+			</if>
+		</if>
+	</select>
+	
+	<select id="selectAllBoard" resultMap="BoardVOMap" parameterType="BoardSearchVO">
+		<include refid="Paging.header"/>
+		SELECT	BOARD_ID
+				, SUBJECT
+				, TO_CHAR(WRITE_DATE, 'YYYY-MM-DD') WRITE_DATE
+				, VIEW_COUNT
+				, LIKE_COUNT
+				, DISLIKE_COUNT
+				, CONTENT
+				, B.ID B_ID
+				, M.ID M_ID
+				, EMAIL
+				, NAME
+				, NICK_NAME
+				, PROFILE_PHOTO
+				, MEMO_RECEIVE_FLAG
+		FROM	BOARD B
+				, MEMBER M
+		WHERE	B.ID = M.ID
+		<if test="searchKeyword != null and searchKeyword != '' ">
+			<if test="searchType == 1">
+			AND		B.SUBJECT LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 2">
+			AND		B.CONTENT LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 3">
+			AND		(B.CONTENT LIKE '%' || #{searchKeyword} || '%'
+			OR		B.CONTENT LIKE '%' || #{searchKeyword} || '%')
+			</if>
+			<if test="searchType == 4">
+			</if>
+			<if test="searchType == 5">
+			AND		M.NAME LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 6">
+			AND		M.NICK_NAME LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 7">
+			AND		M.ID LIKE '%' || #{searchKeyword} || '%'
+			</if>
+			<if test="searchType == 8">
+			</if>
+		</if>
+		ORDER	BY BOARD_ID DESC
+		<include refid="Paging.footer"/>
+	</select>
+	
+	<select id="selectOneBoardVO" resultMap="BoardVOMap" parameterType="_int">
+		SELECT	BOARD_ID
+				, SUBJECT
+				, TO_CHAR(WRITE_DATE, 'YYYY-MM-DD HH24:MI')WRITE_DATE
+				, VIEW_COUNT
+				, LIKE_COUNT
+				, DISLIKE_COUNT
+				, CONTENT
+				, B.ID B_ID
+				, M.ID M_ID
+				, EMAIL
+				, NAME
+				, NICK_NAME
+				, PROFILE_PHOTO
+				, MEMO_RECEIVE_FLAG
+		FROM	BOARD B
+				, MEMBER M
+		WHERE	BOARD_ID = #{boardId}
+		AND		B.ID = M.ID
+	</select>
+	
+	<insert id="insertNewBoard" parameterType="boardVO">
+		INSERT INTO BOARD (	
+							BOARD_ID
+							, SUBJECT
+							, WRITE_DATE
+							, VIEW_COUNT
+							, LIKE_COUNT
+							, DISLIKE_COUNT
+							, CONTENT
+							, ID	
+						  )
+		VALUES			  (
+							BOARD_ID_SEQ.NEXTVAL
+							, #{subject}
+							, SYSDATE
+							, 0
+							, 0
+							, 0
+							, #{content}
+							, #{id}
+						  )
+	
+	
+	</insert>
+	
+	<update id="updateViewCount" parameterType="_int">
+		UPDATE 	BOARD
+		SET		VIEW_COUNT = VIEW_COUNT + 1
+		WHERE	BOARD_ID = #{boardId}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="BoardVO" >
+		DELETE
+		FROM	BOARD
+		WHERE	BOARD_ID = #{boardId}
+		AND		ID = #{id}
+	</delete>
+	
+	<update id="updateBoard" parameterType="BoardVO">
+		UPDATE 	BOARD
+		SET		SUBJECT = #{subject}
+				, CONTENT = #{content}
+		WHERE	BOARD_ID = #{boardId}
+		AND		ID = #{id}
+	</update>
+</mapper>

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+.confirm-header-wrap {
+    padding-top: 120px;
+}
+
+.confirm-header {
+	height: 120px;
+	margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: normal;
+}
+
+
+.confirm-header-wrap h3{
+	font-size: 0;
+    line-height: 0;
+    text-align: center;
+}
+
+.confirm-header-wrap .title-desK {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.non-subnavigation02 #subtitle-area {
+    height: 72px;
+    padding-top: 0;
+    border-bottom: 0;
+}
+
+.subtitle-area {
+    position: relative;
+    min-width: 930px;
+}
+
+.subtitle-area-inner {
+    position: relative;
+    width: 930px;
+    margin: 0 auto;
+}
+
+.location{
+    font-size: 11px;
+    line-height: 1.2;
+    color: #dedede;
+    text-align: right;
+   
+}
+
+.location a{
+	text-decoration:none;
+	color: #747474
+}
+
+.location a:hover{
+	text-decoration:underline;
+}
+
+.check {
+	/*position: absolute;
+	top: 77px;
+    left: 230px;*/
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main {
+	position: relative;	
+	top: 12px;
+}
+
+.center {
+	width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.text {
+	padding: 13px 0 12px 0;
+    border: 1px solid #666a73;
+    background: #707683;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.text span {
+	font-weight: bold;
+}
+
+.intelligenceA {
+	width: 930px;
+	margin: auto;
+}
+
+.intelligence {
+	border-bottom: 1px solid #dedede;
+    margin: 50px 0px;
+}
+
+.textz {
+	width: 100%
+}
+
+.jeongboA{
+	margin-top: 10px;
+}
+
+.db {
+    margin: 0px 5px;
+    font-style: normal;
+}
+
+.adress {
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+	width: 52%;
+    margin: 10px 0 55px 0px;
+	position: relative;
+}
+
+.adress table{
+	width: 50%
+}
+.adress th {
+	padding: 17px 0 17px 20px;
+    background: #f6f7f9;
+    background-color: #ffffff;
+}
+
+.adress td {
+	padding: 12px 0 12px 20px;
+    text-align: left;
+}
+
+.adress div {
+	position: absolute;
+	right: 191px;
+	top: 14px;
+}
+
+input.txt {
+    padding: 5px 0 5px 4px;
+    border: 1px solid #dedede;
+    border-radius: 0;
+    background: #ffffff;
+    color: #707070;
+    font-size: 14px;
+}
+
+.txta {
+    margin-top: 6px;
+    margin-bottom: 0px;
+	
+}
+.completeBtn {
+	display: block;
+	margin-left: 410px;
+	margin-bottom: 50px;
+}
+
+.containerA {
+	width: 1000px
+}
+
+.non-subnavigation02 #article {
+    padding-top: 0;
+}
+
+#article {
+    width: 930px;
+    margin: 0 auto;
+}
+
+.collectively  {
+	width: 930px;
+	margin: 0 auto;
+}

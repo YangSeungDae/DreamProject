@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="CarDao">
+  	<resultMap type="CarVO" id="CarVOMap">
+  		<id property="carId" column="CAR_ID" />
+		<result property="carName" column="CAR_NAME" />
+		<result property="carTypeFlag" column="CAR_TYPE_FLAG" />
+		<result property="html" column="HTML" javaType="java.lang.String" jdbcType="CLOB" typeHandler="org.apache.ibatis.type.ClobTypeHandler" />
+  	</resultMap>
+ 	<select id="selectCarById" parameterType="_int" resultMap="CarVOMap">
+ 		SELECT
+ 			CAR_ID
+ 			, CAR_NAME
+ 			, CAR_TYPE_FLAG
+ 			, HTML
+ 		FROM CAR
+ 		WHERE	CAR_ID=#{carId}
+ 	</select>
+ 	<insert id="insertNewCar" parameterType="CarVO">
+ 		INSERT INTO CAR
+ 		(
+ 			CAR_ID
+ 			, CAR_NAME
+ 			, CAR_TYPE_FLAG
+ 			, HTML
+ 		)
+ 		VALUES
+ 		(
+ 			CAR_ID_SEQ.NEXTVAL
+ 			, #{carName}
+ 			, #{carTypeFlag}
+ 			, #{html}
+ 		)
+ 	</insert>
+ 	<update id="updateCarById" parameterType="CarVO">
+ 		UPDATE CAR
+ 		SET		CAR_NAME=#{carName}
+ 				, CAR_TYPE_FLAG=#{carTypeFlag}
+ 				, HTML=#{html}
+ 		WHERE 	CAR_ID=#{carId}
+ 	</update>
+  </mapper>

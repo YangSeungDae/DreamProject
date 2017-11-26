@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  				<!-- 인터페이스 이름 -->
+<mapper namespace="MemberDao">
+			<!-- 메소드 이름   /   넘어오는 데이터 형식이 어디껀지 알려줘야됨(Alias로 등록된 이름)-->
+	<!-- 접근법 : MemberDao.insertMember -->
+	<!-- ; 적는거 아님 -->
+	<!-- PASSWORD는 사용자가 입력한 값이 들어가야 되는데 그게 memberImpl 에 잇는 memberVO -->
+	<!-- 가져올꺼니까 #{} 형식으로 vo에 있는 변수명 적어줌 -->
+	<insert id="insertMember" parameterType="MemberVO">
+		INSERT INTO MEMBER (
+								MEMBER_ID
+								, HMPG_AGRMNT_YN
+								, PRSN_INFO_CLCTN_AGRMNT_YN
+								, PRSN_INFO_LEAVE_AGRMNT_YN
+								, NAME
+								, PASSWORD
+								, MOBILE_NO
+								, ADDRESS
+								, SMS_SPAM_YN
+								, EMAIL_SPAM_YN
+								, MOBILE_SPAM_YN
+								, ADDRESS_SPAM_YN
+								, AUTH_LEV
+							)
+		VALUES				(
+								#{memberId}
+								,#{hmpgAgrmntYn}
+								,#{prsnInfoClctnAgrmntYn}
+								,#{prsnInfoLeaveAgrmntYn}
+								,#{name}
+								,#{password}
+								,#{mobileNo}
+								,#{address}
+								,#{smsSpamYn}
+								,#{emailSpamYn}
+								,#{mobileSpamYn}
+								,#{addressSpamYn}
+								,#{authLev}
+							)
+	</insert>
+	
+	
+	<!-- MemberVO 형식으로 가져오기 위해 resultType 에 memberVO의 알리아스 를 적고 -->
+	<!-- 각 컬럼들도 VO의 변수와 이름이 다르기 때문에 알리아스 를 만들어 준다. -->
+	<select id="selectOneMemberByIdAndPassword" parameterType="MemberVO" resultType="MemberVO">
+		SELECT 	MEMBER_ID memberId
+				, HMPG_AGRMNT_YN hmpgAgrmntYn
+				, PRSN_INFO_CLCTN_AGRMNT_YN prsnInfoClctnAgrmntYn
+				, PRSN_INFO_LEAVE_AGRMNT_YN prsnInfoLeaveAgrmntYn
+				, NAME name
+				, PASSWORD password
+				, MOBILE_NO mobileNo
+				, ADDRESS address
+				, SMS_SPAM_YN smsSpamYn
+				, EMAIL_SPAM_YN emailSpamYn
+				, MOBILE_SPAM_YN mobileSpamYn
+				, ADDRESS_SPAM_YN addressSpamYn
+				, AUTH_LEV authLev
+		FROM	MEMBER
+		WHERE	MEMBER_ID = #{memberId}
+		AND		PASSWORD = #{password}
+	</select>
+	<update id="updateAddressById" parameterType="MemberVO">
+		UPDATE	MEMBER
+			SET ADDRESS = #{address}
+		WHERE 	MEMBER_ID = #{memberId}
+	</update>
+</mapper>
